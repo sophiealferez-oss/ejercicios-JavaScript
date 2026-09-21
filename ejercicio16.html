@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    //Caso 16: Realice un calculador de depreciación lineal de maquinaria que solicite el valor
+//histórico y los años de vida útil; calcule el valor residual redondeado al entero inferior con
+//Math.floor(), y evalúe mediante if-else si el activo ya alcanzó su valor de salvamento o si
+//continúa depreciándose. 
+const salvamento = 500000;
+let valorHistorico = parseFloat(prompt('Ingrese el valor histórico: '));
+let añosVida= parseInt(prompt('Ingrese los años de vida: '));
+//calcule el valor residual
+let depreciacionanual= valorHistorico / añosVida;
+
+var valorRedondeado= Math.floor(depreciacionanual);
+let valorResidual = valorHistorico - salvamento; //"cuánto valor tiene la máquina disponible para depreciarse antes de llegar al mínimo"
+if(depreciacionanual <= valorResidual){
+    document.write('continua depreciandose');
+    document.write('<br>');
+} else {
+    document.write('Ya alcanzó su valor de salvamento');
+    document.write('<br>');
+}
+
+document.write('valor historico: ' + valorHistorico);
+document.write('<br>');
+document.write('Años de vida: ' + añosVida);
+document.write('<br>');
+document.write('Depreciación anual: ' + valorRedondeado);
+document.write('<br>');
+document.write('¿Cuánto valor tiene la máquina disponible para depreciarse antes de llegar al mínimo? ' + valorResidual);
+document.write('<br>');
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Caso 21: Elabore un cotizador de pólizas de seguro automotriz que capture el modelo del
+//vehículo y la edad del conductor; calcule la prima base usando operadores matemáticos y
+//aplique recargos o bonificaciones mediante condicionales si el conductor se encuentra dentro
+//de rangos etarios de alto o bajo riesgo. 
+let añoActual = 2026;
+let modeloVehiculo = parseFloat(prompt('ingrese el modelo del vehiculo: '));
+let edadConductor = parseInt(prompt( 'ingrese la edad del conductor: '));
+
+let antiguedad = añoActual - modeloVehiculo;
+let primaBase= 1000000 - (antiguedad * 20000);
+
+
+if (edadConductor <= 25){
+    document.write('NIVEL DE RIESGO: ALTO, RECARGO DEL "25%');
+    let recargo= primaBase * 0.25;
+    let recargoFinal = primaBase + recargo;
+    document.write('<br>');
+    document.write('Prima base es: ' + primaBase);
+    document.write('Recargo con la prima base es: ' + recargoFinal);
+    document.write('<br>');
+
+
+} else {
+    if(edadConductor <= 60){
+        document.write('NIVEL DE RIESGO: NORMAL, BONIFICACION DEL "10%');
+        document.write('<br>');
+        let recargo= primaBase * 0.10;
+        let recargoFinal = primaBase - recargo;
+        document.write('Prima base es: ' + primaBase);
+        document.write('<br>');
+        document.write('Recargo con la prima base es: ' + recargoFinal);
+        document.write('<br>');
+    } else {
+
+        document.write('Recargo de 15% por ser mayor');
+        document.write('<br>');
+        let recargo= primaBase * 0.15;
+        let recargoFinal = primaBase + recargo;
+        document.write('<br>');
+        document.write('Prima base es: ' + primaBase);
+        document.write('<br>');
+        document.write('Recargo con la prima base es: ' + recargoFinal);
+            
+    }
+
+
+    document.write('Modelo auto: ' + modeloVehiculo);
+    document.write('<br>');
+    document.write('Edad del conductor: ' + edadConductor);
+    document.write('<br>');
+
+}
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

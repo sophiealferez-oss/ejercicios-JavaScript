@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //Caso 17: Cree una herramienta de arqueo de caja que reciba un arreglo con los montos de
+//ventas del día; organice los valores de forma ascendente con sort(), descarte la primera venta
+//por considerarse fondo de caja inicial mediante shift() y corrobore si el balance final coincide
+//con el dinero físico ingresado por prompt(). 
+
+//Cree una herramienta de arqueo de caja que reciba un arreglo con los montos de
+//ventas del día;
+let montosVentadia=[];
+let dineroFisico = parseFloat(prompt('Ingrese cuanto dinero fisico hay en la caja: '));
+document.write('Dinero físico en la caja: ' + dineroFisico);
+document.write('<br>');
+
+let suma = 0;
+for (let i = 0; i < 5; i++) {
+    montosVentadia.push(parseFloat(prompt( 'Ingrese el monto de ventas del dia: ')));
+
+    
+}
+
+document.write('organizado de forma ascendente:' + montosVentadia.sort((a, b) => a - b));
+document.write('<br>');
+
+montosVentadia.shift();
+document.write('descarto de la primera venta por considerarse fondo de caja inicial: ' + montosVentadia);
+document.write('<br>');
+
+
+
+//corrobore si el balance final coincide
+//con el dinero físico ingresado por prompt(). 
+
+for (let i = 0; i < montosVentadia.length; i++) {
+    suma += montosVentadia[i];
+    
+}
+
+
+if( suma === dineroFisico) {
+    document.write('coinicide el balance final con el dinero físico ingresado por prompt');
+    document.write('<br>');
+
+} else {
+
+    document.write('NO coinicide el balance final con el dinero físico ingresado por prompt');
+    document.write('<br>');
+
+
+}
+document.write('La suma de los monto del día es: ' + suma);
+document.write('<br>');
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//Caso 28: Diseñe una plataforma de subastas que almacene las ofertas recibidas en un
+//arreglo; identifique la oferta ganadora con Math.max(), ordene el historial de propuestas con
+//sort() y determine mediante condicionales si la mejor postura supera el precio de reserva fijado
+//por el vendedor.
+
+let precioReserva = 250000;
+
+let ofertasRecibidas = [150000, 90000, 46000, 85000, 200000];
+
+let ofertaGanadora = Math.max(...ofertasRecibidas);
+document.write('La oferta ganadora es: ' + ofertaGanadora);
+document.write('<br>');
+
+ofertasRecibidas.sort((a, b) => a - b);
+document.write(ofertasRecibidas);
+document.write('<br>');
+
+if(ofertaGanadora > precioReserva){
+    document.write('Supera al precio reserva por el vendedor :)' );
+
+} else {
+    document.write('No supera al precio reserva por el vendedor');
+}
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

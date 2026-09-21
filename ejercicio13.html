@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //Caso 13: Construya un programa para liquidar nómina con turnos rotativos donde se capturen
+//días trabajados y turno (1: Diurno, 2: Nocturno); aplique factores multiplicativos mediante
+//operadores de asignación compuesta y verifique mediante if-else anidados si corresponde
+//retención en la fuente. 
+
+let salarioDia= 50000;
+let diasTrabajados= parseInt(prompt('Ingrese los días trabajados: '));
+let turnos = parseInt(prompt('Ingrese el turno:  (1: DIurno, 2:Nocturnos)'));
+let salario = diasTrabajados * salarioDia; //para calcular el salario se multiplican los dias por el pago del dia :)
+
+if( turnos === 2){ //para recargo
+    salario *= 1.35;
+
+} else {
+    salario *= 1.0;
+}
+
+salario = Math.round(salario);
+document.write('Salario: ' + salario)
+document.write('<br>');
+
+if (salario <= 1000000){
+    document.write('No corresponde retención en la fuente')
+} else {
+    if (salario <= 3000000){
+        document.write('Corresponde a la retención en la fuente: tarija baja ');
+        document.write('<br>');
+    } else {
+        document.write('Corresponde a la retención en la fuente: tarija alta ');
+        document.write('<br>');
+    }
+}
+document.write('<br>');
+document.write('Dias trabajados: ' + diasTrabajados);
+document.write('<br>');
+document.write('Turno: ' + turnos);
+document.write('<br>');
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //Caso 9: Desarrolle un asistente de caja registradora que reciba el costo de una compra y el
+        //valor entregado por el cliente; verifique con if-else si el dinero es suficiente y determine la
+        //cantidad mínima de billetes de alta denominación a entregar utilizando divisiones enteras y
+        //residuo (%). 
+
+        let billete50= 50000;
+        let costoCompra=parseFloat(prompt('Ingrese el costo de la compra: '));
+        let dineroCliente=parseFloat(prompt('Ingrese el valor con el que va a pagar: '));
+        document.write('<br>');
+        if (dineroCliente < costoCompra) {
+            document.write('No es suficiente para cancelar el producto.');
+            document.write('<br>');
+        } else 
+        {
+        
+            document.write('Es suficiente para cancelar el producto.');
+            document.write('<br>');
+        }
+
+        let cambio = dineroCliente - costoCompra;
+        let billetesCompletos = cambio / billete50;
+        let cantidadBilletes50 = Math.floor(billetesCompletos);
+        let restante= cambio % billete50;
+
+        document.write('Costo de la compra: ', costoCompra);
+        document.write('<br>');
+        document.write('Dinero que entregó el cliente: ', dineroCliente);
+        document.write('<br>');
+        document.write('Las devueltas: ', cambio);
+        document.write('<br>');
+        document.write('Cantidad de billetes de 50 que le corresponden: ', cantidadBilletes50);
+        document.write('<br>');
+        document.write('El restante que sobra: ', restante);
+        document.write('<br>');
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

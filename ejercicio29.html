@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+//Caso 29: Desarrolle un calculador de rendimientos de inversiones CDT a término fijo; compute
+//las ganancias proyectadas empleando operadores de asignación combinada y potenciación
+//(**), calcule el descuento tributario correspondiente y deduzca con Math.floor() el total neto
+//líquido a consignar. 
+let tasaMensual= 0.01;
+let montoInvertido = parseFloat(prompt('Ingrese el monto a invertir en el CDT: '));
+let mesesPlazo = parseInt(prompt('Ingrese el plazo en meses: '));
+
+let montoFInal = montoInvertido * ( 1 + tasaMensual) ** mesesPlazo;
+
+let ganancias = montoFInal;
+ganancias -= montoInvertido;
+
+let tasaImpuesto = 0.04;
+let descuentoTributario = ganancias * tasaImpuesto;
+
+let totalNeto = Math.floor(montoFInal - descuentoTributario);
+
+document.write('Monto invertido: ' + montoInvertido);
+document.write('<br>');
+document.write(' plazo en meses: ' + mesesPlazo);
+document.write('<br>');
+document.write('Ganancias generadas: ' + Math.round(ganancias));
+document.write('<br>');
+document.write('Descuento tributario: ' +  Math.round(descuentoTributario));
+document.write('<br>');
+document.write('Total neto a pagar: ' + totalNeto);
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

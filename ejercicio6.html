@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //Caso 6: Diseñe un liquidador de créditos bancarios que pida monto y plazo en meses; calcule
+//la cuota aplicando la fórmula de interés compuesto con el operador de potenciación (**),
+//determine con Math.round() la cifra exacta a debitar y condicione si el monto mensual excede
+//el 30% del salario ingresado.
+
+// Diseñe un liquidador de créditos bancarios que pida monto y plazo en meses
+
+let monto, plazoMeses, cuota, salario, treintaPorciento, tazaInteres, valorTazaInteres, aumentocontaza ;
+
+salario=parseFloat(prompt('Ingrese su salario: '));
+monto=parseFloat(prompt('ingrese el monto a pagar:'));
+tazaInteres=parseInt(prompt('Ingrese la taza de interés: '));
+plazoMeses=parseInt(prompt('Ingrese el plazo en meses: '));
+
+valorTazaInteres = tazaInteres / 100;
+aumentocontaza = (1 + valorTazaInteres) ** plazoMeses;
+let numerador = valorTazaInteres * aumentocontaza;
+let denominador = aumentocontaza -1;
+
+cuota= monto * (numerador/denominador);
+
+cuota= Math.round(cuota);
+
+treintaPorciento = salario *0.30;
+document.write('El valor del 30% del salario ingresado es de: ' + treintaPorciento);
+document.write('<br>');
+if (cuota > treintaPorciento){
+    document.write('La cuota excede el 30% de su salario: ' + cuota);
+    document.write('<br>');
+
+} else {
+    document.write('La cuota no excede el 30% de su salario: ' + cuota);
+    document.write('<br>');
+}
+document.write('Su salario: ' + salario);
+document.write('<br>');
+document.write('Monto a pagar: ' + monto);
+document.write('<br>');
+document.write('Plazo en meses: ' + plazoMeses);
+document.write('<br>');
+document.write('Valor Cuota mensual a pagar: ' + cuota);
+document.write('<br>');
+
+
+
+
+    </script>
+    
+
+
+
+
+</body>
+</html>

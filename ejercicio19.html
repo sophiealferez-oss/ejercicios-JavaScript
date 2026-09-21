@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Caso 19: Programe un selector de promociones aleatorias de tienda online que elija un índice
+//al azar de un arreglo de productos empleando Math.floor(Math.random() * array.length);
+//extraiga el producto seleccionado con splice() y valide mediante if-else si el artículo califica
+//para despacho sin costo.
+
+//Programe un selector de promociones aleatorias de tienda online que elija un índice
+//al azar de un arreglo de productos empleando Math.floor(Math.random() * array.length);
+
+let productos = ['computador', ' celular', 'Audifonos Inalámbricos', 'Lámparas', ' cargadores'];
+indiceAleatorio = Math.floor(Math.random()* productos.length);
+
+
+let productoNombre = productos[indiceAleatorio];
+document.write('Producto seleccionado: ' + productoNombre);
+document.write('<br>');
+
+productos.splice(indiceAleatorio, 1);
+
+if(indiceAleatorio === 0){
+    document.write('Articulo para despacho sin costo');
+} else {
+    if (indiceAleatorio ===  1){
+        document.write('Articulo para despacho sin costo');
+    } else{
+    if(indiceAleatorio === 2){
+        document.write('Articulo para despacho sin costo');
+    } else {
+        if (indiceAleatorio === 3){
+        document.write('Articulo para despacho con costo');
+    } else 
+    {
+        if (indiceAleatorio === 4){
+        document.write('Articulo para despacho con  costo');
+    }
+    }
+    } 
+
+    }
+}
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>l

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    // Caso 18: Diseñe un simulador de cobranzas que aplique un interés moratorio diario
+    //acumulativo (*= y **) sobre una factura vencida; compare mediante if-else si los recargos
+    //superan el valor capital original y restrinja el cobro ajustándolo con Math.round().
+    let tasaDIaria= 0.02;
+    let valorCapital = parseFloat(prompt('ingrese el valor de la factura: '));
+    let diasMora= parseInt(prompt('Ingrese los días de mora: '));
+
+    let montoRecargo = valorCapital * (1 + tasaDIaria) ** diasMora; //representa "cuánto creció la deuda" después de esos días de mora, aplicado sobre el capital.
+    let recargo = montoRecargo;
+    recargo -= valorCapital;
+
+    montoRecargo = Math.round(montoRecargo);
+    recargo =Math.round(recargo);
+
+    if( recargo > valorCapital) {
+        document.write('ALERTA: los recargos superan el valor capital');
+    } else {
+        document.write('los recargos NO superan el valor capital');
+
+    }
+
+document.write('valor capital ingreaado: ' + valorCapital);
+document.write('<br>');
+document.write('dias de mora: ' + diasMora);
+document.write('<br>');
+document.write('Recargo: ' + recargo);
+document.write('<br>');
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

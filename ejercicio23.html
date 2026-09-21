@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //Caso 23: Diseñe un sistema de cálculo de índice de masa corporal (IMC) para un módulo
+//médico empresarial; calcule el índice mediante la fórmula matemática dividiendo el peso entre
+//la altura al cuadrado (** 2), redondee a dos cifras o al entero más próximo y clasifique el
+//resultado en bajo peso, normal, sobrepeso u obesidad usando if-else. 
+
+//calcule el índice mediante la fórmula matemática dividiendo el peso entre
+////la altura al cuadrado (** 2),
+
+let peso= parseInt (prompt('Ingrese su peso: '));
+let altura= parseFloat(prompt('Ingrese su altura: '));
+let indiceMasaCorporal = peso /(altura ** 2);
+
+indiceMasaCorporal = Math.round(indiceMasaCorporal);
+
+if(indiceMasaCorporal < 18.5){
+    document.write('bajo peso');
+} else {
+    if (indiceMasaCorporal <= 24.9){
+        document.write('peso normal');
+    }
+    else {
+        if(indiceMasaCorporal <= 29.9){
+            document.write('Sobrepeso ALERT!');
+        }
+        else {
+            document.write('Obesa ALERT!');
+        }
+    }
+}
+
+
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

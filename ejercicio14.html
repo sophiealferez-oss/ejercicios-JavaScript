@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //Caso 14: Elabore un algoritmo de control de temperatura de almacenamiento en frío; capture
+//5 lecturas en un arreglo, determine el valor mínimo registrado con Math.min() y emita una
+//alerta crítica si la dispersión de temperaturas calculada con diferencias y valores absolutos
+//(Math.abs()) supera el umbral permitido.
+
+let temperaturas= [];
+let umbral =5;
+for (let i = 0; i < 5; i++) {
+    temperaturas.push(parseFloat(prompt('Ingrese las temperaturas: ')));
+    
+}
+
+document.write(temperaturas);
+document.write('<br>');
+
+temperaturasMinima = Math.min(...temperaturas);
+document.write('temperatura mínima: ' + temperaturasMinima);
+document.write('<br>');
+
+temperaturasMax = Math.max(...temperaturas);
+document.write('temperatura maxima: ' + temperaturasMax);
+document.write('<br>');
+
+let dispersion = Math.abs (temperaturasMax - temperaturasMinima);
+
+document.write('Dispersión: ' + dispersion);
+document.write('<br>');
+
+if(dispersion > umbral) {
+
+    document.write('ALERTA, LA DISPERSION DE TEMPERATURAS SUPERA EL UMBRAL ESTABLECIDO');
+
+} else {
+    document.write(' LA DISPERSION DE TEMPERATURAS NO SUPERA EL UMBRAL ESTABLECIDO');
+}
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

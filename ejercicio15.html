@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//Caso 15: Implemente un validador de descuentos por fidelidad que almacene los consumos
+//históricos de un usuario; añada el consumo actual con push(), calcule el total acumulado
+//usando reasignaciones (+=) y aplique un porcentaje de descuento diferenciado según el rango
+//de consumo validado por condicionales.
+let suma = 0;
+let consumosHistoricos = [500000, 250000, 190000, 745000];
+
+consumosHistoricos.push(900000);
+
+
+for (let i = 0; i < consumosHistoricos.length; i++) {
+    suma += consumosHistoricos[i];
+    
+}
+
+if (suma <= 500000){
+    document.write('tiene un descuento del 3%');
+} else {
+    if( suma <= 1000000) {
+        document.write('tiene un descuento del 7%');
+        document.write('<br>');
+    }
+
+    else {
+        if (suma <= 1700000){
+            document.write('tiene un descuento del 10%');
+            document.write('<br>');
+        }
+
+        else {
+            document.write(' aplica al descuento: 20%');
+            document.write('<br>');
+        }
+    }
+}
+document.write('<br>');
+document.write('Consumo historico actual: ' + consumosHistoricos);
+document.write('<br>');
+document.write('Total acumulado: ' + suma);
+document.write('<br>');
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

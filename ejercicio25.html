@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Caso 25: Realice un módulo de facturación de servicios públicos que reciba la lectura anterior
+//y actual de un medidor de agua; determine el consumo restando variables, aplique cobros por
+//tramos escalonados con if-else y determine el valor de la tasa ambiental calculada como el
+//residuo (%) de la base gravable. 
+
+let valorTasaAmbiental = 0.05;
+let baseGravable = 50000;
+let valorCOnsumo
+
+let medidorAguaantiguo= parseFloat(prompt('Ingrese el medidor de agua antiguo: '));
+let medidorAguaactual= parseFloat(prompt('Ingrese el medidor de agua actual: '));
+
+let tasaAmbiental = (baseGravable + (baseGravable * valorTasaAmbiental)) % baseGravable;
+
+let consumo = medidorAguaactual - medidorAguaantiguo;
+
+if(consumo <= 15){
+    valorCOnsumo= consumo * 2000;
+} else {
+    if(consumo <= 30){
+        valorCOnsumo = consumo *3500;
+    } else {
+        valorCOnsumo = consumo * 5000;
+    }
+}
+
+let totaFactura= valorCOnsumo + tasaAmbiental;
+
+document.write('consumo: ' + consumo);
+document.write('<br>');
+document.write('Valor consumo: ' + valorCOnsumo);
+document.write('<br>');
+document.write('Tasa ambiental: ' + tasaAmbiental);
+document.write('<br>');
+document.write('Total a pagar: ' + totaFactura);
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

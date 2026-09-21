@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+ //Caso 12: Diseñe un script que reciba dos listas independientes de clientes (sucursal Norte y
+//sucursal Sur); únalas mediante concat(), compruebe si la longitud total (length) supera el límite
+//de atención diaria y, en caso positivo, traslade los excedentes a un arreglo de espera usando
+//splice(). 
+
+const atencionDiaria = 5;
+let listaEspera = [];
+
+let clientesNorte = ['Juan', ' sofía', ' juliana' , ' John'];
+let clientesSur = [' Maurice', ' Alex', ' Felipe' , ' Sara'];
+
+let cantidadNorte= clientesNorte.length;
+let cantidadSur= clientesSur.length;
+let cantidadTotal = cantidadNorte + cantidadSur;
+let unidos = clientesNorte.concat(clientesSur);
+document.write('Clientes norte y sur : ' + unidos);
+document.write('<br>');
+
+
+if ( cantidadTotal > 5){
+    listaEspera = unidos.splice (atencionDiaria);
+}
+
+document.write('Atención diaria a clientes: ' + atencionDiaria);
+document.write('<br>');
+
+document.write('Cantidad total de clientes : ' + cantidadTotal);
+document.write('<br>');
+document.write('Clientes en lista de espera: ' + listaEspera);
+document.write('<br>');
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>l

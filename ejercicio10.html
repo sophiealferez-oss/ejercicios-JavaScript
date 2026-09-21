@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script> 
+    //Caso 10: Programe un clasificador de inventario que reciba una lista de códigos alfanuméricos
+//desordenados; ordénelos en sentido inverso (sort() y reverse()), extraiga los dos últimos con
+//pop() para auditoría externa y muestre por pantalla si la cantidad final de existencias es un
+//número par o impar evaluado con el operador %.
+
+//Caso 10: Programe un clasificador de inventario que reciba una lista de códigos alfanuméricos
+
+let codigosAlfanumericos=[];
+
+for (let i = 0; i < 5; i++) {
+    codigosAlfanumericos.push(prompt('Ingrese un código alfanumerico: '));
+}
+
+codigosAlfanumericos.sort(); //ordena los códigos alfabéticamente (de la A a la Z) para ordernr en sentido inverso
+codigosAlfanumericos.reverse(); //invierte ese orden, dejándolo de la Z a la A
+document.write(codigosAlfanumericos);
+document.write('<br>');
+
+let auditoria1 = codigosAlfanumericos.pop();
+let auditoria2= codigosAlfanumericos.pop();
+
+let cantidadCodigos = codigosAlfanumericos.length;
+
+if(cantidadCodigos % 2 === 0) {
+    document.write('La cantidad final de existencias es par: ' + cantidadCodigos)
+    document.write('<br>');
+}
+else {
+    document.write('La cantidad final de existencias es impar: ' + cantidadCodigos)
+}
+
+document.write('<br>');
+document.write('Código extraido para auditoria 1: ' + auditoria1);
+document.write('<br>');
+document.write('Código extraido para auditoria 2: ' + auditoria2);
+document.write('<br>');
+document.write('Códigos restantes: ' + codigosAlfanumericos);
+document.write('<br>');
+
+
+    
+
+
+
+</script>
+</body>
+</html>

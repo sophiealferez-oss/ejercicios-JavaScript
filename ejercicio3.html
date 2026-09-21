@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Desarrolle un sistema de facturación rápida que mantenga un arreglo de compras;
+        //permita ingresar un nuevo artículo al inicio (unshift()) y otro al final (push()), elimine el producto
+        //de prueba inicial (shift()) y calcule mediante un condicional si el total acumulado supera el
+    //límite de crédito disponible. 
+
+
+    const limiteCreditoDisponible = 50000000; 
+    let suma =0;
+    let compras = [
+        {Producto: 'zapatos',  valor: 35000},
+        {Producto: 'ipad',  valor: 1000000},
+        {Producto: 'Lámparas',  valor: 20000},
+        {Producto: 'celular',  valor : 600000},
+        {Producto: 'Collares',  valor : 250000},
+        {Producto: 'aretes',  valor : 35000},
+
+];
+
+
+
+    compras.unshift({Producto: 'peluches', valor: 15000 });
+    document.write('<br>');
+    compras.push({Producto: 'Apple watch', valor: 2000000 });
+    compras.shift();
+
+for (let i = 0; i < compras.length; i++) {
+    document.write(compras[i].Producto + ': $' + compras[i].valor);
+    document.write('<br>');
+}
+
+
+    
+
+for (let i = 0; i < compras.length; i++) {
+    suma += compras[i].valor;
+}
+document.write('total acumulado: ' + suma);
+document.write('<br>');
+
+if( suma > limiteCreditoDisponible){
+    document.write('El total acumulado supera el limite de crédito establecido, el cual es de : 50000000');
+} else 
+{
+    document.write('El total acumulado no supera el limite de crédito establecido, el cual es de : 50000000');
+}
+
+
+
+
+
+
+    </script>
+</body>
+</html>

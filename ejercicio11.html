@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Caso 11: Cree un cotizador de envíos internacionales que capture peso y volumen; calcule el
+//peso volumétrico aplicando fórmulas con Math.sqrt() y multiplicaciones sucesivas, elija el
+//mayor entre el peso físico y el volumétrico mediante Math.max() y aplique tarifas escalonadas
+//con if-else. 
+
+//Cree un cotizador de envíos internacionales que capture peso y volumen;
+
+let peso = parseFloat(prompt('Ingrese el peso del envío: '));
+let volumen = parseFloat(prompt('Ingrese el  del envío: '));
+
+//calcule el peso volumétrico aplicando fórmulas con Math.sqrt()
+
+let pesoVolumetrico = Math.sqrt(volumen) * 2;
+let pesoMayor= Math.max(peso, pesoVolumetrico);
+
+if (pesoMayor <= 5 ){
+    document.write('tiene una tarifa de 5.000');
+
+} else{
+    if (pesoMayor <= 10)
+{
+    document.write('tiene una tarifa de 10.000');
+} else 
+{
+    if(pesoMayor <=15){
+        document.write('tiene una tarifa de 20.000');
+    }
+    else {
+        document.write('tiene una tarifa de 30.000');
+    }
+} 
+}
+
+    </script>
+</body>
+</html>

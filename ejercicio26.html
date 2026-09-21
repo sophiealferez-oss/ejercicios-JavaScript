@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script> 
+    //Caso 26: Construya un generador de turnos de soporte que mantenga un arreglo con nombres
+//de asesores disponibles; rote al analista que atiende enviándolo al final de la lista (shift()
+//seguido de push()) y determine con if-else si la carga operativa diaria por turno amerita
+//habilitar un asesor de refuerzo.
+
+//Construya un generador de turnos de soporte que mantenga un arreglo con nombres
+//de asesores disponibles;
+let cargaOperativa = 65;
+let limiteCarga= 50;
+
+let asesoresDisponibles = ['Sofía', 'Juliana', 'William', 'Esteban', 'Andrés'];
+let asesorsacado = asesoresDisponibles.shift();
+asesoresDisponibles.push(asesorsacado);
+
+if(cargaOperativa > limiteCarga){
+    document.write('La carga operativa supera el limite, se requiere un asesor')
+} else {
+    document.write('La carga operativa es manejable');
+}
+
+
+
+
+
+</script>
+
+
+
+
+    
+</body>
+</html>

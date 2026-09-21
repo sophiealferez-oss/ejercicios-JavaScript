@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+
+    //Realice una rutina logística que capture el peso en kilogramos de 6 paquetes dentro
+//de un arreglo; remueva elementos defectuosos desde una posición específica usando splice(),
+//sume los pesos restantes y verifique mediante condicionales si la carga excede la capacidad
+//total del camión de reparto.
+
+//Realice una rutina logística que capture el peso en kilogramos de 6 paquetes dentro
+//de un arreglo;
+let suma = 0;
+const capacidadCamion = 800;
+let peso1 = parseFloat(prompt('Ingrese el peso en kilogramos: '));
+let peso2 = parseFloat(prompt('Ingrese el peso en kilogramos: '));
+let peso3 = parseFloat(prompt('Ingrese el peso en kilogramos: '));
+let peso4 = parseFloat(prompt('Ingrese el peso en kilogramos: '));
+let peso5 = parseFloat(prompt('Ingrese el peso en kilogramos: '));
+let peso6 = parseFloat(prompt('Ingrese el peso en kilogramos: '));
+
+let pesoPaquetes = [peso1, peso2, peso3, peso4, peso5, peso6];
+let posicionDefectuoso = parseInt(prompt('elija un peso defectuoso del 0 a 5: '));
+
+pesoPaquetes.splice(posicionDefectuoso , 1);
+document.write(pesoPaquetes);
+
+for (let i = 0; i < pesoPaquetes.length; i++) {
+    suma += pesoPaquetes[i];
+    
+}
+
+//verifique mediante condicionales si la carga excede la capacidad
+//total del camión de reparto.
+
+if(suma > 800){
+    document.write('<br>');
+    document.write('Excede la capacidad total del camón');
+    document.write('<br>');
+
+} else 
+{
+    document.write('<br>');
+    document.write('NO excede la capacidad total del camón');
+    document.write('<br>');
+}
+
+document.write(' Capacidad total del camón: ' + capacidadCamion);
+document.write('<br>');
+document.write('Poscion defectuoso: ' + posicionDefectuoso);
+document.write('<br>');
+document.write('Peso 1 en kg: ' + pesoPaquetes[0]);
+document.write('<br>');
+document.write('Peso 2 en kg: ' + pesoPaquetes[1]);
+document.write('<br>');
+document.write('Peso 3 en kg: ' + pesoPaquetes[2]);
+document.write('<br>');
+document.write('Peso 4 en kg: ' + pesoPaquetes[3]);
+document.write('<br>');
+document.write('Peso 5 en kg: ' + pesoPaquetes[4]);
+document.write('<br>');
+document.write('Suma pesos restantes: ' + suma);
+document.write('<br>');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //Caso 27: Programe un validador de transacciones financieras sospechosas que evalúe el
+//valor de un retiro; si el monto sobrepasa el límite diario calculado con Math.max() respecto al
+//saldo disponible o si el saldo final queda por debajo de cero, bloquee el movimiento e imprima
+//el dictamen en pantalla. 
+
+let saldoDisponible = 750000;
+let valor= parseFloat(prompt('Ingrese el valor del retiro: '));
+document.write('valor ingresado: ' + valor);
+document.write('<br>');
+
+
+let valorMax= Math.max( valor, saldoDisponible);
+document.write('Monto maximo: ' + valorMax);
+document.write('<br>');
+
+let saldoFinal= saldoDisponible - valor;
+document.write('saldo actual:' + saldoFinal)
+document.write('<br>');
+
+if( valorMax > saldoDisponible || saldoFinal < 0){
+    document.write('Bloqueado movimiento');
+    document.write('<br>');
+} else{
+    document.write('movimiento en orden all good');
+    document.write('<br>');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+    
+</body>
+</html>

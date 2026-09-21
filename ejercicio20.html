@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Caso 20: Desarrolle un script de empaque industrial que reciba la producción total de
+//unidades; determine el número de tarimas completas y las piezas sueltas restantes usando
+//división y residuo (%), aplicando un embalaje extra evaluado con Math.ceil() si el remanente
+//sobrepasa el límite establecido. 
+
+//Caso 20: Desarrolle un script de empaque industrial que reciba la producción total de
+//unidades
+let unidadesporTarima= 40;
+let limiteRemanente =20;
+let embalajeExtra = 0;
+let unidadesTotal= parseInt(prompt('ingrese el total de unidades: '));
+
+let tarimasCompletas = Math.floor(unidadesTotal / unidadesporTarima);
+let piezasSueltas = unidadesTotal % unidadesporTarima;
+
+if(piezasSueltas > limiteRemanente) {
+    embalajeExtra = Math.ceil(piezasSueltas / unidadesporTarima);
+    document.write('se requiere embalaje extra: ' + embalajeExtra);
+} else {
+    document.write('NO se requiere embalaje extra');
+}
+document.write('<br>');
+document.write('Total de unidades ' + unidadesTotal);
+document.write('<br>');
+document.write('Tarimas completas: ' + tarimasCompletas);
+document.write('<br>');
+document.write('Piezas sueltas: ' + piezasSueltas);
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+    
+</body>
+</html>

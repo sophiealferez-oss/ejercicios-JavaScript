@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //Caso 24: Implemente un auditor de discrepancias de inventario que reciba un arreglo con el
+//stock del sistema y otro con el conteo físico en estantería; calcule la diferencia absoluta con
+//Math.abs() en posiciones homólogas y determine mediante condicionales qué referencias
+//exigen un recuento inmediato. 
+
+let limiteDiscrepcia = 5;
+let stockSistema = [50, 30, 20, 15, 40];
+let conteoFisico =[48, 30, 12, 15, 35]; 
+
+for (let i = 0; i < stockSistema.length; i++) {
+    let diferencia= Math.abs(stockSistema[i] - conteoFisico[i]);
+
+    document.write('referencia ' + i + ': sistema=' + stockSistema[i] + ', fisico = ' + conteoFisico[i] + ', diferencia= '+ diferencia);
+    document.write('<br>');
+
+    if (diferencia > limiteDiscrepcia){
+        document.write ('Requiere recuento iunmediato') ;
+        document.write('<br>');
+    } else {
+        document.write('discrepancia aceptable')
+    }
+    document.write('<br>');
+}
+
+
+
+    </script>
+    
+</body>
+</html>

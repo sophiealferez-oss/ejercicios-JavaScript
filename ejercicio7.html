@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // Caso 7: Elabore un programa para registrar calificaciones que almacene 4 notas en un
+//arreglo; elimine la peor calificación empleando sort() y shift(), calcule el promedio ponderado
+//de las restantes y defina con if-else si el estudiante aprueba, reprueba o habilita. 
+
+//Elabore un programa para registrar calificaciones que almacene 4 notas en un
+//arreglo
+
+let not1=parseFloat(prompt('Ingrese la nota 1:  '));
+let not2=parseFloat(prompt('Ingrese la nota 2:  '));
+let not3=parseFloat(prompt('Ingrese la nota 3:  '));
+let not4=parseFloat(prompt('Ingrese la nota 4:  '));
+let notas = [not1, not2, not3, not4];
+
+notas.sort((a, b) => a - b);//ordena de menor a mayor
+document.write(notas);
+
+let notaPeor = notas.shift();
+document.write(notas);
+
+let promedioPonderado = (notas[0] * 0.20) + (notas[1] * 0.30) + (notas[2] * 0.50);
+document.write('<br> ');
+if (promedioPonderado >= 3.5) {
+    document.write(' aprueba');
+    document.write('<br> ');
+} else {
+    if (promedioPonderado >= 3.0  ){
+        document.write('Habilita');
+        document.write('<br> ');
+    }
+
+    else {
+        document.write('Reprueba');
+        document.write('<br> ');
+    }
+}
+document.write('<br> ');
+document.write('Nota 1: ', notas[0]);
+document.write('<br> ');
+document.write('Nota 2: ', notas[1]);
+document.write('<br> ');
+document.write('Nota 3: ', notas[2]);
+document.write('<br> ');
+document.write('Nota peor eliminada: ', notaPeor);
+document.write('<br> ');
+document.write('Promedio Ponderado:  ', promedioPonderado);
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

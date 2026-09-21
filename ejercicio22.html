@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //Cree un gestor de colas de despacho para comercio electrónico donde los clientes
+//VIP se agreguen al inicio (unshift()) y los convencionales al final (push()); procese al primer
+//cliente con shift() y determine mediante condicionales anidados si el tiempo de espera
+//estimado excede los estándares de calidad. 
+
+let colaDespacho =[];
+
+colaDespacho.push('cliente convencional a');
+colaDespacho.push('cliente convencional b');
+colaDespacho.unshift('Cliente VIP 1');
+colaDespacho.unshift('Cliente VIP 2');
+
+document.write('cola de despachos: ' + colaDespacho);
+document.write('<br>');
+
+let clienteAtendido = colaDespacho.shift();
+document.write('Primer cliente atendido: ' + clienteAtendido);
+document.write('<br>');
+document.write('cola restante: ' + colaDespacho);
+document.write('<br>');
+
+let tiempoEspera = parseInt(prompt('ingrese un tiempo de espera (minutos): '));
+
+if(tiempoEspera <= 10)
+{
+    document.write('tiempo de espera bueno, dentro del estandar');
+} else {
+    if (tiempoEspera <= 30){
+        document.write('tiempo de espera aceptable, dentro del estandar');
+    } else {
+        document.write('tiempo de espera excede los estandares de calidad');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

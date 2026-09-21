@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //Cree un script que capture el salario básico y las horas extras de un empleado; 
+        // calcule
+//el valor de las horas extras mediante potenciación y módulo para recargos nocturnos,
+//determine mediante if-else si el trabajador tiene derecho a subsidio de transporte, y redondee
+//el total a pagar al entero superior con Math.ceil(). 
+
+let salarioBasico, horasExtras, totalaPagar, valorSubsidio, tieneSubsidio;
+let recargoNocturnos = 0.35;
+
+salarioBasico = parseFloat(prompt('Ingrese su salario básico:  '));
+horasExtras = parseInt(prompt('Ingrese las horas extras: '));
+let valorHora = salarioBasico /240; //se divide el salario con 240 q son las horas laborales en col para saber el valo de una hora y así calcular el extra
+
+let horasNocturnas = horasExtras % 8;
+let factorRecargo = (1 + recargoNocturnos) ** 1;
+let valorHoraExtras = valorHora * horasNocturnas * factorRecargo;
+
+if (salarioBasico <= 1750000) {
+    valorSubsidio = 10000;
+    tieneSubsidio = true;
+    totalaPagar = salarioBasico + valorHoraExtras + valorSubsidio;
+} else {
+    tieneSubsidio = false
+    totalaPagar = salarioBasico + valorHoraExtras;
+}
+
+let totalapagarredondeado = Math.ceil(totalaPagar);
+
+document.write(' Salario básico ingresado: ' + salarioBasico);
+document.write('<br>');
+document.write(' Horas extras ingresadas: ' + horasExtras);
+document.write('<br>');
+document.write('El valor de las horas extras es: ' + valorHoraExtras);
+document.write('<br>');
+document.write('Tiene subsidio: ' + tieneSubsidio);
+document.write('<br>');
+document.write('Valor total a pagar: ' + totalapagarredondeado);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+
+
+
+
+</body>
+</html>

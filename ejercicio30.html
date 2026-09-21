@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //Caso 30: Elabore un asistente de abastecimiento de materias primas que capture en un
+//arreglo los consumos semanales de un material; determine el consumo promedio, calcule la
+//raíz cuadrada (Math.sqrt()) de la variabilidad para estimar el stock de amortiguación y concluya
+//con if-else anidados si se debe emitir una orden de reabastecimiento urgente a proveedores. 
+
+let consumoSemanalMaterial = [500000, 450000, 700000, 1000000];
+let sumaCOnsumo = 0;
+let sumaDiferenciasCuadrado = 0;
+
+for (let i = 0; i < consumoSemanalMaterial.length; i++) {
+    sumaCOnsumo += consumoSemanalMaterial[i];
+    
+}
+let promedioConsumo = sumaCOnsumo /consumoSemanalMaterial.length;
+
+for (let i = 0; i < consumoSemanalMaterial.length; i++) {
+    let diferencia = consumoSemanalMaterial[i] - promedioConsumo;
+    sumaDiferenciasCuadrado += diferencia ** 2;
+    
+}
+
+let varianza = sumaDiferenciasCuadrado / consumoSemanalMaterial.length;
+let variabilidad = Math.sqrt(varianza);
+
+let stockAmortiguacion = variabilidad * 2;
+let umbralUrgente = 300000;
+
+if (variabilidad > umbralUrgente) {
+    document.write('se debe emitir una orden de reabastecimiento urgente');
+} else {
+    if( variabilidad >umbralUrgente / 2) {
+        document.write('se recomienda revisar el stock, variabilidad moderada')
+    } else {
+        document.write('COnsumo estable, no se requiere accion urgente ')
+    }
+
+
+}
+
+document.write('<br>');
+document.write('Consumo promedio semanal: ' + Math.round(promedioConsumo));
+document.write('<br>');
+document.write('Variabilidad (desviación estándar): ' + Math.round(variabilidad));
+document.write('<br>');
+document.write('Stock de amortiguación sugerido: ' + Math.round(stockAmortiguacion));
+
+
+
+
+    </script>
+    
+</body>
+</html>

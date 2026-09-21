@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+//Caso 1: Diseñe un programa en VS Code donde se declare un arreglo con los precios de 5
+//productos; solicite mediante prompt() un porcentaje de recargo inflacionario, aplique dicho
+//incremento al primer y último elemento usando operadores compuestos (+=, *=) y muestre en
+//el documento HTML el valor máximo y mínimo resultante usando Math.max() y Math.min(). 
+
+
+let precios = [35000, 70000, 160000, 580000, 190000 ];
+
+porcentajeRecargo = parseInt(prompt('Ingrese el porcentaje de recargo inflacionario: '));
+document.write('<br>');
+let recargo = porcentajeRecargo / 100;
+
+document.write('Porcentaje registrado: ' + porcentajeRecargo);
+document.write('<br>');
+
+document.write(' Precios: ', [precios]);
+document.write('<br>');
+
+
+incremento1 =  precios[0] * recargo;
+precios[0] += incremento1;
+document.write('<br>');
+document.write('incremento del primer elemento: ' + precios[0]);
+
+
+document.write('<br>');
+
+document.write('incremento del primer elemento: ' + incremento1);
+
+incremento3 = precios[precios.length-1] * recargo;
+precios[precios.length-1] *= (1 + recargo);
+
+document.write('<br>');
+document.write('incremento del último elemento: ' + incremento3);
+document.write('<br>');
+
+var valorMax = Math.max (...precios);
+document.write('Valor maximo: ' + valorMax);
+document.write('<br>');
+var valorMin = Math.min (...precios);
+document.write('Valor mínimo: ' + valorMin);
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

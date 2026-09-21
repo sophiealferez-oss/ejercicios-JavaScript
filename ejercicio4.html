@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+       //Caso 4: Implemente un simulador de descuentos aleatorios que genere un número entero
+//entre 1 y 100 con Math.random(); si el valor aleatorio es superior a 50 aplique una rebaja del
+//15% a una compra capturada por teclado, si está entre 20 y 50 aplique el 5%, y si es menor
+//elimine el beneficio informando la condición en pantalla.
+
+//var aleatorio = Math.round(Math.random()*10);
+//document.write('valor aletaorio: ', aleatorio);
+//document.write('<br>');
+
+let compra, valorRebaja, valorFinal;
+
+compra= parseFloat(prompt('Ingrese el precio de la compra:'));
+
+
+var aleatorioDescuentos = Math.round(Math.random() * 100);
+if(aleatorioDescuentos > 50) {
+
+    valorRebaja= compra * 0.15;
+    valorFinal = compra - valorRebaja;
+    document.write('Ha obtenido un número de descuento aleatorio mayor a 50 y aplica a una rebaja del 15% por su compra: ' + aleatorioDescuentos);
+    document.write('<br>');
+    document.write('El precio de la compra que ingresó: ' + compra);
+    document.write('<br>');
+    document.write('El valor final a pagar con el descuento aleatorio es de: ' + valorFinal);
+
+} else {
+
+    //si está entre 20 y 50 aplique el 5%
+    if (aleatorioDescuentos >= 20 && aleatorioDescuentos <=50 ){ 
+
+        valorRebaja= compra * 0.05;
+        valorFinal = compra - valorRebaja;
+        document.write('Ha obtenido un número de descuento aleatorio entre 20 y 50, aplica a una rebaja del 5% por su compra: ' + aleatorioDescuentos);
+        document.write('<br>');
+        document.write('El precio de la compra que ingresó: ' + compra);
+        document.write('<br>');
+        document.write('El valor final a pagar con el descuento aleatorio es de: ' + valorFinal);
+
+    } else {
+        if(aleatorioDescuentos < 20) {
+
+            document.write('Ha obtenido un número de descuento aleatorio menor a 20, NO aplica al beneficio por su compra: ' + aleatorioDescuentos);
+            document.write('<br>');
+            document.write('El precio de la compra que ingresó: ' + compra);
+            document.write('<br>');
+            document.write('El valor final a pagar final es de: ' + compra);
+
+        }
+    }
+}
+
+
+    </script>
+
+
+
+
+    
+</body>
+</html>
